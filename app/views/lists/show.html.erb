@@ -1,0 +1,27 @@
+<h1><%= @list.name %></h1>
+
+<p>
+  <strong>Movies:</strong>
+  <% @list.bookmarks.each do |bookmark| %>
+    <ul>
+      <li> Title: <%= bookmark.movie.title %> </li>
+      <li> Overview: <%= bookmark.movie.overview %> </li>
+      <li> Poster URL: <%= bookmark.movie.poster_url %> </li>
+      <li> Rating: <%= bookmark.movie.rating %> </li>
+    </ul>
+  <% end %>
+</p>
+
+
+<h3>BOOKMARKS</h3>
+
+<div class="bookmarks">
+  <% @list.bookmarks.each do |bookmark| %>
+    <ul>
+      <li> <%= bookmark.comment %> </li>
+    </ul>
+  <% end %>
+</div>
+
+<p> <%= link_to 'Leave a bookmark', new_list_bookmark_path(@list) %> </p>
+<p> <%= link_to 'Back to movie lists', lists_path %> </p>

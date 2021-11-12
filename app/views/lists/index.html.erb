@@ -1,0 +1,18 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>Your movie lists</h1>
+    <p>All your favoruite movies, organized like you want it</p>
+    <%# <a class="btn btn-flat" href="#">Apply now</a> %>
+    <%= link_to 'Add a New List', new_list_path %>
+  </div>
+</div>
+
+<% @lists.each do |list| %>
+  <div class="card-product">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos">
+      <h2> <%= list.name %> </h2>
+      <p> <%= link_to 'show list', list %></p>
+    </div>
+  </div>
+<% end %>
